@@ -144,7 +144,7 @@ source ~/.shell_aliases
 
 # FUZZY FINDER CONFIGURATION
 # Use ~~ as the trigger sequence instead of the default **
-export FZF_COMPLETION_TRIGGER='~~'
+export FZF_COMPLETION_TRIGGER='**'
 
 # FZF's command
 export FZF_DEFAULT_COMMAND="fd"
