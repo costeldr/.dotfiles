@@ -1,0 +1,7 @@
+alias vim='nvim'
+alias vi='nvim'
+alias la='ls -A'
+alias ls='ls --color=auto'
+alias grep='grep --colour=auto'
+alias egrep='egrep --colour=auto'
+alias fgrep='fgrep --colour=auto'
