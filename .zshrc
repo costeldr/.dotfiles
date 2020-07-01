@@ -228,3 +228,7 @@ export FZF_DEFAULT_OPTS="
 --bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
 --bind 'ctrl-v:execute(code {+})'
 "
+
+# LIGHTLINE CONFIG
+
+export TERM=xterm-256color
