@@ -5,6 +5,7 @@ This project is very raw, and held together with duct tape. Read the code carefu
 
 ## Prerequesites
 This installation assumes you have installed git, fd (fd-find)
+
 All the dotfiles that are already present on your system have been deleted of moved to another place.
 
 ## Installation
