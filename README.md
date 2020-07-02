@@ -4,7 +4,7 @@
 This project is very raw, and held together with duct tape. Read the code carefully, and use at your own risk.
 
 ## Prerequesites
-This installation assumes you have installed git, fd (fd-find), bat (batcat)
+This installation assumes you have installed **git, curl, fd (fd-find), bat (batcat)**
 
 All the dotfiles that are already present on your system have been deleted of moved to another place.
 
