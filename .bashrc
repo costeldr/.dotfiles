@@ -138,6 +138,9 @@ ex ()
   fi
 }
 
+# Dotfiles Management, Git Bare Repository
+/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME config --local status.showUntrackedFiles no
+
 source ~/.shell_aliases
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash # FUZZY FINDER source .fzf.bash
