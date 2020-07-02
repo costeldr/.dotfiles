@@ -25,3 +25,4 @@ let g:lightline = {
 " Gruvbox Configuration
 " add other gruvbox options before the 'set colorscheme gruvbox' line
 colorscheme gruvbox
+set background=dark
