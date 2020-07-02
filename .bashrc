@@ -144,23 +144,25 @@ ex ()
 # Where to look for new aliases
 source ~/.shell_aliases
 
+# FUZZY FINDER CONFIGURATION
+
 #Configure alias for fdfind
 alias fd='fdfind'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash # FUZZY FINDER source .fzf.bash
 
-# FUZZY FINDER CONFIGURATION
-# Use ~~ as the trigger sequence instead of the default **
-export FZF_COMPLETION_TRIGGER='**'
-
 # FZF's command
-export FZF_DEFAULT_COMMAND="fd"
+export FZF_DEFAULT_COMMAND="fdfind"
 
 # CTRL-T's command
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # ALT-Cs command
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
+
+# FZF Completion trigger
+export FZF_COMPLETION_TRIGGER='**'
+
 
 export FZF_DEFAULT_OPTS="
 --layout=reverse
