@@ -9,7 +9,7 @@ This installation assumes you have installed git, fd (fd-find)
 ## Installation
 
 ```
-git clone --bare https://github.com/USERNAME/.dotfiles.git $HOME/.dotfiles.git &&
+git clone --bare https://github.com/costeldr/.dotfiles.git $HOME/.dotfiles.git &&
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME' &&
 dotfiles checkout
 ```
