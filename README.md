@@ -19,3 +19,8 @@ Restart your shell after the process is finished, or run `source ~/.bashrc`
 
 Next time you'll open something through vim or neovim, your plugins should install.
 After that restart your shell or source .bashrc again to link fzf with fd, and that should be it.
+
+## Sources/Credits
+
+[Distro Tube - Git Bare Repository - A Better Way To Manage Dotfiles](https://www.youtube.com/watch?v=tBoLDpTWVOM)
+[How to manage your dotfiles with git](https://medium.com/toutsbrasil/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b)
