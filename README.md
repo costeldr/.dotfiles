@@ -23,4 +23,5 @@ After that restart your shell or source .bashrc again to link fzf with fd, and t
 ## Sources/Credits
 
 [Distro Tube - Git Bare Repository - A Better Way To Manage Dotfiles](https://www.youtube.com/watch?v=tBoLDpTWVOM)
+
 [How to manage your dotfiles with git](https://medium.com/toutsbrasil/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b)
