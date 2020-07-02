@@ -11,8 +11,8 @@ All the dotfiles that are already present on your system have been deleted of mo
 ## Installation
 
 ```
-git clone --bare https://github.com/costeldr/.dotfiles.git $HOME/.dotfiles.git &&
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME' &&
+git clone --bare https://github.com/costeldr/.dotfiles $HOME/.dotfiles &&
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' &&
 dotfiles checkout
 ```
 Restart your shell after the process is finished, or run `source ~/.bashrc`
