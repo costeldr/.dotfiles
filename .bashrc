@@ -141,7 +141,11 @@ ex ()
 # Dotfiles Management, Git Bare Repository
 /usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME config --local status.showUntrackedFiles no
 
+# Where to look for new aliases
 source ~/.shell_aliases
+
+#Configure alias for fdfind
+alias fd='fdfind'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash # FUZZY FINDER source .fzf.bash
 
