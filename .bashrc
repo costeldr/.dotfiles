@@ -183,4 +183,3 @@ export FZF_DEFAULT_OPTS="
 # LIGHTLINE COLORS
 
 export TERM=xterm-256color
-

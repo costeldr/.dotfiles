@@ -195,23 +195,28 @@ case $(basename "$(cat "/proc/$PPID/comm")") in
     ;;
 esac
 
+# Where to look for new aliases
 source ~/.shell_aliases
 
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh ## FUZZY FINDER source .fzf.zsh
-
 # FUZZY FINDER CONFIGURATION
-# Use ~~ as the trigger sequence instead of the default **
-export FZF_COMPLETION_TRIGGER='**'
+
+#Configure alias for fdfind
+alias fd='fdfind'
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash # FUZZY FINDER source .fzf.bash
 
 # FZF's command
-export FZF_DEFAULT_COMMAND="fd"
+export FZF_DEFAULT_COMMAND="fdfind"
 
 # CTRL-T's command
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # ALT-Cs command
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
+
+# FZF Completion trigger
+export FZF_COMPLETION_TRIGGER='**'
+
 
 export FZF_DEFAULT_OPTS="
 --layout=reverse
@@ -229,6 +234,7 @@ export FZF_DEFAULT_OPTS="
 --bind 'ctrl-v:execute(code {+})'
 "
 
-# LIGHTLINE CONFIG
+# LIGHTLINE COLORS
 
 export TERM=xterm-256color
+
