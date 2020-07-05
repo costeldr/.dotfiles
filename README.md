@@ -11,7 +11,7 @@ All the dotfiles that are already present on your system have been deleted of mo
 
 ```
 git clone --bare https://github.com/costeldr/.dotfiles $HOME/.dotfiles &&
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' &&
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 ```
 Once done, run:
 ```
