@@ -25,7 +25,6 @@ set noshowmode
 " More space for displaying messages.
 set cmdheight=2
 
-
 " Longer update time, default 4
 set updatetime=50
 
@@ -68,6 +67,7 @@ endif
 let g:gruvbox_invert_selection='0'    
 
 " --- vim go (polyglot) settings.
+
   let g:go_highlight_build_constraints = 1
   let g:go_highlight_extra_types = 1
   let g:go_highlight_fields = 1
@@ -116,3 +116,19 @@ nnoremap <Leader>rp :resize 100<CR>
 nnoremap <Leader>ee oif err != nil {<CR>log.Fatalf("%+v\n", err)<CR>}<CR><esc>kkI<esc>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+" vim TODO
+nmap <C-Q> <Plug>BujoChecknormal
+imap <C-Q> <Plug>BujoCheckinsert
+nmap <C-S> <Plug>BujoAddnormal
+imap <C-S> <Plug>BujoAddinsert
+
+let g:bujo#todo_file_path = $HOME . "/.cache/bujo"
+
+" Vim with me
+nnoremap <leader>vwm :colorscheme gruvbox<bar>:set background=dark<CR>
+nmap <leader>vtm :highlight Pmenu ctermbg=gray guibg=gray
+
+vnoremap X "_d
+inoremap <C-c> <esc>
+
