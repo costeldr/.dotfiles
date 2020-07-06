@@ -50,7 +50,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tweekmonster/gofmt.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-utils/vim-man'
