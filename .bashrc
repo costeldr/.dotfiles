@@ -146,19 +146,16 @@ source ~/.shell_aliases
 
 # FUZZY FINDER CONFIGURATION
 
-#Configure alias for fdfind
-alias fd='fdfind'
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash # FUZZY FINDER source .fzf.bash
 
 # FZF's command
-export FZF_DEFAULT_COMMAND="fdfind"
+export FZF_DEFAULT_COMMAND="rg --files"
 
 # CTRL-T's command
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # ALT-Cs command
-export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
+export FZF_ALT_C_COMMAND="rg --hidden --files --null | xargs -0 dirname | uniq"
 
 # FZF Completion trigger
 export FZF_COMPLETION_TRIGGER='**'
