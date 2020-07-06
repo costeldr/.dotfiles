@@ -19,6 +19,14 @@ dotfiles checkout
 ```
 Restart your shell after the process is finished, or run `source ~/.bashrc`
 
+## Vim-Plug Installation
+
+```
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+       
+
 Next time you'll open something through vim or neovim, your plugins should install.
 After that restart your shell or source .bashrc again to link fzf with fd, and that should be it.
 
