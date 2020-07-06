@@ -21,8 +21,10 @@ Restart your shell after the process is finished, or run `source ~/.bashrc`
 
 ## Vim-Plug Installation
 
-`sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'`
+```
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
        
 
 Next time you'll open something through vim or neovim, your plugins should install.
