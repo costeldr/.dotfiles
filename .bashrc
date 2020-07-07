@@ -149,7 +149,7 @@ source ~/.shell_aliases
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash # FUZZY FINDER source .fzf.bash
 
 # FZF's command
-export FZF_DEFAULT_COMMAND="rg --files --no-ignore-vcs --hidden"
+export FZF_DEFAULT_COMMAND="rg --files --ignore-vcs --hidden"
 
 # CTRL-T's command
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

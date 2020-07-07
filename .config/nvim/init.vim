@@ -34,11 +34,10 @@ set updatetime=50
 
 set shortmess+=c
 
-set colorcolumn=90
+set colorcolumn=110
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 call plug#begin('~/.vim/plugged')
-
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -51,11 +50,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'vuciv/vim-bujo'
 
 " HTML/CSS
-
 Plug 'mattn/emmet-vim'
 
 " Colorschemes
-
 Plug 'itchyny/lightline.vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'sainnhe/gruvbox-material'
@@ -143,8 +140,7 @@ nnoremap <leader>k :winc k<CR>
 nnoremap <leader>l :winc l<CR>
 
 nnoremap <leader>prr :CocSearch <C-R>=expand("<cword>")<CR><CR>
-" Find help for word under cursor
-" K does the same thing
+" Find vim help for word under cursor
 nnoremap <leader>phw :h <C-R>=expand("<cword>")<CR><CR>
 " Show Undotree
 nnoremap <leader>u :UndotreeShow<CR>
@@ -157,8 +153,7 @@ nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
 nnoremap <C-p> :GFiles<CR>
 " Open fzf for Files
 nnoremap <Leader>pf :Files<CR>
-nnoremap <Leader>pg <bar> :Files ~/<CR>
-nnoremap <Leader>pd :vs<bar> :Files ~/<CR>
+nnoremap <Leader>pd :Files ~/<CR>
 " Source init.vim
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
 " Write and Quit
@@ -167,10 +162,19 @@ nnoremap <leader>w :w<CR>
 
 " Resizing/Splitting windows
 "nnoremap <Leader>r :res 100
-nnoremap <leader>vs :vs<CR>
-nnoremap <leader>hs :sp<CR>
+nnoremap <C-v> :vs<CR>
+nnoremap <C-h> :sp<CR>
 nnoremap <leader>= :res +5<CR>
 nnoremap <leader>- :res -5<CR>
+
+" Tabs and Buffers
+nnoremap <leader>c :clo<CR>
+nnoremap <leader>1 :bp<CR>
+nnoremap <leader>2 :bn<CR>
+nnoremap <leader>3 :tabp<CR>
+nnoremap <leader>4 :tabn<CR>
+nnoremap <leader>5 :Buffers<CR>
+
 
 " J or K in visual mode will move line one row below or above and remain in
 " visual mode
