@@ -63,7 +63,6 @@ Plug 'phanviet/vim-monokai-pro'
 Plug 'flazz/vim-colorschemes'
 Plug '/home/mpaulson/personal/vim-be-good'
 
-
 call plug#end()
 
 colorscheme monokai_pro
@@ -80,7 +79,7 @@ let g:gruvbox_invert_selection='0'
 " Lightline configuration
 "
 let g:lightline = {
-  \   'colorscheme': 'Dracula',
+  \   'colorscheme': 'jellybeans',
   \   'active': {
   \     'left':[ [ 'mode', 'paste' ],
   \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]
@@ -106,11 +105,11 @@ let g:lightline.tabline = {
   \   'left': [ ['tabs'] ],
   \   'right': [ ['close'] ]
   \ }
+
 set showtabline=2  " Show tabline
 set guioptions-=e  " Don't use GUI tabline
 
 " --- vim go (polyglot) settings.
-
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_fields = 1
@@ -137,23 +136,42 @@ let g:netrw_browse_split = 2
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
 
+" Window Navigation
+nnoremap <leader>h :winc h<CR>
+nnoremap <leader>j :winc j<CR>
+nnoremap <leader>k :winc k<CR>
+nnoremap <leader>l :winc l<CR>
+
 nnoremap <leader>prr :CocSearch <C-R>=expand("<cword>")<CR><CR>
-nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
+" Find help for word under cursor
+" K does the same thing
 nnoremap <leader>phw :h <C-R>=expand("<cword>")<CR><CR>
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
+" Show Undotree
 nnoremap <leader>u :UndotreeShow<CR>
+" Open file explorer in vertical window on the left
 nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+" Open Ripgrep
 nnoremap <Leader>ps :Rg<SPACE>
+nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
+" Open fzf for git files
 nnoremap <C-p> :GFiles<CR>
+" Open fzf for Files
 nnoremap <Leader>pf :Files<CR>
+nnoremap <Leader>pg <bar> :Files ~/<CR>
+nnoremap <Leader>pd :vs<bar> :Files ~/<CR>
+" Source init.vim
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
-nnoremap <Leader>= :vertical resize +5<CR>
-nnoremap <Leader>- :vertical resize -5<CR>
-nnoremap <Leader>rp :resize 100<CR>
-nnoremap <Leader>ee oif err != nil {<CR>log.Fatalf("%+v\n", err)<CR>}<CR><esc>kkI<esc>
+" Write and Quit
+nnoremap <leader>q :q<CR>
+nnoremap <leader>w :w<CR>
+
+" Resizing/Splitting windows
+"nnoremap <Leader>r :res 100
+nnoremap <leader>vs :vs<CR>
+nnoremap <leader>hs :sp<CR>
+nnoremap <leader>= :res +5<CR>
+nnoremap <leader>- :res -5<CR>
+
 " J or K in visual mode will move line one row below or above and remain in
 " visual mode
 vnoremap J :m '>+1<CR>gv=gv
@@ -164,6 +182,7 @@ nmap <C-Q> <Plug>BujoChecknormal
 imap <C-Q> <Plug>BujoCheckinsert
 nmap <C-S> <Plug>BujoAddnormal
 imap <C-S> <Plug>BujoAddinsert
+nnoremap <C-T> :Todo <CR>
 
 let g:bujo#todo_file_path = $HOME . "/.cache/bujo"
 
