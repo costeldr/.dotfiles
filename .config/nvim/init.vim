@@ -23,12 +23,15 @@ set scrolloff=8
 set noshowmode
 
 " More space for displaying messages.
-set cmdheight=2
+
+set cmdheight=1
 
 " Longer update time, default 4
+
 set updatetime=50
 
 " Don't pass messages to |ins-completion-menu|.
+
 set shortmess+=c
 
 set colorcolumn=90
@@ -46,46 +49,82 @@ Plug 'vim-utils/vim-man'
 Plug 'mbbill/undotree'
 Plug 'sheerun/vim-polyglot'
 Plug 'vuciv/vim-bujo'
+
+" HTML/CSS
+
 Plug 'mattn/emmet-vim'
 
 " Colorschemes
 
+Plug 'itchyny/lightline.vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 Plug 'phanviet/vim-monokai-pro'
-Plug 'vim-airline/vim-airline'
 Plug 'flazz/vim-colorschemes'
 Plug '/home/mpaulson/personal/vim-be-good'
 
 
 call plug#end()
 
-let g:gruvbox_contrast_dark = 'hard'
+colorscheme monokai_pro
+set background=dark
+
+let g:gruvbox_contrast_dark = 'medium'
 if exists('+termguicolors')
         let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
             let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
+
 let g:gruvbox_invert_selection='0'
+
+" Lightline configuration
+"
+let g:lightline = {
+  \   'colorscheme': 'Dracula',
+  \   'active': {
+  \     'left':[ [ 'mode', 'paste' ],
+  \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]
+  \     ]
+  \   },
+	\   'component': {
+	\     'lineinfo': ' %3l:%-2v',
+	\   },
+  \   'component_function': {
+  \     'gitbranch': 'fugitive#head',
+  \   }
+  \ }
+let g:lightline.separator = {
+	\   'left': '', 'right': ''
+  \}
+let g:lightline.subseparator = {
+	\   'left': '', 'right': ''
+  \}
+
+" Lighlite show tabline and disable GUI tabline
+
+let g:lightline.tabline = {
+  \   'left': [ ['tabs'] ],
+  \   'right': [ ['close'] ]
+  \ }
+set showtabline=2  " Show tabline
+set guioptions-=e  " Don't use GUI tabline
 
 " --- vim go (polyglot) settings.
 
-  let g:go_highlight_build_constraints = 1
-  let g:go_highlight_extra_types = 1
-  let g:go_highlight_fields = 1
-  let g:go_highlight_functions = 1
-  let g:go_highlight_methods = 1
-  let g:go_highlight_operators = 1
-  let g:go_highlight_structs = 1
-  let g:go_highlight_types = 1
-  let g:go_highlight_function_parameters = 1
-  let g:go_highlight_function_calls = 1
-  let g:go_highlight_generate_tags = 1
-  let g:go_highlight_format_strings = 1
-  let g:go_highlight_variable_declarations = 1
-  let g:go_auto_sameids = 1
-
-colorscheme gruvbox
-set background=dark
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_types = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_generate_tags = 1
+let g:go_highlight_format_strings = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_auto_sameids = 1
 
 if executable('rg')
         let g:rg_derive_root='true'
@@ -111,7 +150,7 @@ nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <C-p> :GFiles<CR>
 nnoremap <Leader>pf :Files<CR>
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
-nnoremap <Leader>+ :vertical resize +5<CR>
+nnoremap <Leader>= :vertical resize +5<CR>
 nnoremap <Leader>- :vertical resize -5<CR>
 nnoremap <Leader>rp :resize 100<CR>
 nnoremap <Leader>ee oif err != nil {<CR>log.Fatalf("%+v\n", err)<CR>}<CR><esc>kkI<esc>
@@ -120,7 +159,7 @@ nnoremap <Leader>ee oif err != nil {<CR>log.Fatalf("%+v\n", err)<CR>}<CR><esc>kk
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-" vim TODO
+" vim ToDo
 nmap <C-Q> <Plug>BujoChecknormal
 imap <C-Q> <Plug>BujoCheckinsert
 nmap <C-S> <Plug>BujoAddnormal
@@ -129,9 +168,9 @@ imap <C-S> <Plug>BujoAddinsert
 let g:bujo#todo_file_path = $HOME . "/.cache/bujo"
 
 " Vim with me
-nnoremap <leader>vwm :colorscheme gruvbox<bar>:set background=dark<CR>
+nnoremap <leader>ox :colorscheme gruvbox<bar>:set background=dark<CR>
+nnoremap <leader>mk :colorscheme monokai_pro<bar>:set background=dark<CR>
 nmap <leader>vtm :highlight Pmenu ctermbg=gray guibg=gray
-
 
 vnoremap X "_d
 inoremap <C-c> <esc>
@@ -183,3 +222,7 @@ augroup highlight_yank
         augroup END
 
         autocmd BufWritePre * :call TrimWhitespace()
+
+" Emmet
+let g:user_emmet_leader_key=','
+let g:user_emmet_mode='n'
