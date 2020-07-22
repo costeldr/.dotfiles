@@ -138,9 +138,6 @@ ex ()
   fi
 }
 
-# Dotfiles Management, Git Bare Repository
-/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME config --local status.showUntrackedFiles no
-
 # Where to look for new aliases
 source ~/.aliases
 
