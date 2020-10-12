@@ -146,13 +146,13 @@ source ~/.aliases
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash # FUZZY FINDER source .fzf.bash
 
 # FZF's command
-export FZF_DEFAULT_COMMAND="rg --files --ignore-vcs --hidden"
+export FZF_DEFAULT_COMMAND="fdfind"
 
 # CTRL-T's command
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # ALT-Cs command
-export FZF_ALT_C_COMMAND="fdfind --type d"
+export FZF_ALT_C_COMMAND="fdfind --t d"
 
 # FZF Completion trigger
 export FZF_COMPLETION_TRIGGER='**'
