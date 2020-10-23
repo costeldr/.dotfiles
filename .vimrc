@@ -39,7 +39,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 " PLUGINS TO INSERT
-
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
